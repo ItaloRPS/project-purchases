@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
   html {
     font-size: 72.5%;
     scroll-behavior: smooth;
+    height: 100vh;
   }
   
   body {

@@ -10,12 +10,16 @@ import { formatPrince } from '@/src/util/formatPrince';
 import { useAppPurchases } from '@/src/hooks/useApp';
 import { ItensProps } from '@/src/common/Types/ItemType';
 
+type cartItemProp ={
+  item:ItensProps
+}
 
-export const CardItem:React.FC<ItensProps> = ({item})=> {
+export const CardItem:React.FC<cartItemProp> = ({item})=> {
   const {cartItems,setCartItems} = useAppPurchases()
 
   const addItemToCart = ()=>{
-    setCartItems([...cartItems, item])
+    const coditem = Math.floor(Math.random() * 0xFFFFFFFF).toString(16) + Date.now().toString(16)
+    setCartItems([...cartItems, {...item,coditem}])
   }
 
   return (

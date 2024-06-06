@@ -10,13 +10,19 @@ import { InputAmount } from '../InputAmount';
 import { Box, IconButton } from '@mui/material';
 import { ItensProps } from '@/src/common/Types/ItemType';
 
+type CartItemProps = {
+  onChange:(v:ItensProps)=> void
+  onRemove:(v:ItensProps)=> void
+  item:ItensProps
+}
 
-export const CartItem:React.FC<ItensProps> = ({item})=> {
-  const [amount, setAmount] = React.useState(item.price)
+export const CartItem:React.FC<CartItemProps> = ({item, onChange, onRemove})=> {
 
   const handleAmountChange = (newValue:any) => {
-    setAmount((v)=> item.price*newValue)
+    const newItem = {...item,amount:newValue}
+    onChange(newItem)
   };
+
   return (
     <Card variant="outlined" 
       sx={{ Width:'100%',
@@ -35,14 +41,15 @@ export const CartItem:React.FC<ItensProps> = ({item})=> {
         {item.name}
         </Typography>
         <Typography gutterBottom variant="h6" >
-          {formatPrince(amount)}
+          
+          {formatPrince((item.price*item.amount))}
         </Typography>
         <Box sx={{maxWidth:'65px', minWidth:'5px'}}>
-          <InputAmount error='' onChange={handleAmountChange}/>
+          <InputAmount error='' onChange={handleAmountChange} />
         </Box>
       </CardContent>
       <CardActions sx={{display:'flex', alignItems:'center', flexDirection:'column'}}>
-        <IconButton aria-label="delete" size="small">
+        <IconButton aria-label="delete" size="small" onClick={()=>onRemove(item)}>
           <DeleteIcon fontSize="inherit" />
         </IconButton>
       </CardActions>

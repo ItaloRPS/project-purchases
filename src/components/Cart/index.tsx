@@ -5,14 +5,33 @@ import { ModalLeft } from '../ModalLeft';
 import {useAppPurchases} from '@/src/hooks/useApp';
 import { CartItem } from '../CartItem';
 import { formatPrince } from '@/src/util/formatPrince';
+import { ItensProps } from '@/src/common/Types/ItemType';
 
 export const Cart = ()=> {
-  const {cartItems} = useAppPurchases()
-    const totalPrice = cartItems.reduce((acc:number,item:any)=>{
-      return item.price +acc
+  const {cartItems, setCartItems, showCart, setShowCart} = useAppPurchases()
+    const totalPrice = cartItems.reduce((acc:number,item:{price:number,amount:number})=>{
+      return (item.price * item.amount) +acc
     },0)
 
-    const {showCart,setShowCart} = useAppPurchases();
+    const removeItem = (data:ItensProps)=>{
+      setCartItems(i=>i.filter((item:any) => {
+        if(item.coditem !== data.coditem){
+          return item
+        }
+      }))
+     
+    }
+
+    const changeItem = (data:ItensProps)=>{
+      const artItems = cartItems.map((item:any) => {
+        if(item.coditem == data.coditem){
+          return data
+        }
+        return item
+      })
+      setCartItems(artItems)
+    }
+
     return (
         <ModalLeft openModal={showCart}>
           <S.HeaderItem>
@@ -22,7 +41,7 @@ export const Cart = ()=> {
             <S.Title>CARRINHO</S.Title>
           </S.HeaderItem>
           <S.ContentItem>
-                {cartItems?cartItems.map((data:any)=><CartItem item={data}/>):<S.notItem>Sem Itens</S.notItem>}
+                {cartItems?cartItems.map((data:any)=><CartItem onChange={changeItem} onRemove={removeItem} item={data}/>):<S.notItem>Sem Itens</S.notItem>}
             </S.ContentItem>  
           <S.FooterItem>
           <Typography gutterBottom variant="h5" sx={{display:'flex',justifyContent:'space-between'}}>

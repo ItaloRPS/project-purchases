@@ -29,6 +29,7 @@ export const FeaturedPost:React.FC<FeaturedPostProps> = ({post}) =>{
             backgroundColor: 'grey.800',
             color: '#fff',
             mb: 4,
+            margin:0,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',

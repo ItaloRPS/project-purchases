@@ -20,7 +20,7 @@ export const InputContainer = styled.div<InputProps>`
     border-radius: 25px;
     margin: 5px;
     border: 1px solid ${(hasError ? 'red' : '#ccc')};
-    background: #ebebeb;
+    background: #ebebeb7a;
 
     &:focus-within{
         outline: none;
@@ -44,7 +44,7 @@ export const Input = styled.input`
     border-radius: 25px;
     padding: 9px 4px;
     flex-grow: 1;
-    background: #ebebeb;
+    background: #ebebeb00;
     margin: 0px 5px;
   `}
 `;
