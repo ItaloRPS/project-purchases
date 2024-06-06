@@ -3,15 +3,21 @@ import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
 
 export const SearchContainer = styled.form`
+    background: #fff 0 0 no-repeat padding-box;
+    border: 1px solid #cdcecf;
+    border-radius: 3px;
+    padding: 3px 10px;
+    right: 0;
     width: 100%;
     display: flex;
-    align-items: center;
-    border: 1px solid #d8d8d8;
-    border-radius: 4px;
-    width: 312px;
     &:focus-within{
         outline: none;
         box-shadow: 0px 0px 3px #1976d226;
+    }
+    svg{
+      font-size: 16px;
+      color: #3a3737;
+
     }
 `;
 

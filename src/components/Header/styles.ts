@@ -1,12 +1,12 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
-export const Wrapper = styled.form`
+export const Header = styled.header`
   ${({ theme }) => css`
   width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   position: sticky;;
+   top: 0;
+   right:0;
+   z-index: 1;
   `}
 `;
 

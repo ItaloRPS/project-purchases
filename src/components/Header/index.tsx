@@ -37,19 +37,19 @@ export default function Header() {
   const {cartItems,setShowCart} = useAppPurchases()
   
   return (
-    <React.Fragment>
+    <S.Header>
       <Toolbar sx={{ justifyContent: 'space-between', borderBottom: 1, borderColor: 'divider' ,background:"#fbfdff", gap:'5px', minHeight:'50px'}}>
         <Typography variant="h6" color="inherit" component="div">
         Photos
       </Typography>
+      <Box sx={{ display: { xs: 'flex' }, gap:'13px' }} alignItems="center">
       <InputSearch onSubmit={handleSubmit}/>
-      <Box sx={{ display: { xs: 'flex' }, gap:'10px' }} alignItems="center">
+        <Link href={"/login"}> Minha Conta</Link>
         <IconButton onClick={()=>setShowCart((v)=> !v)}>
           <Badge badgeContent={cartItems.length} color="primary">
             <ShoppingCartIcon style={{width:'20px', height:'20px'}}/>
           </Badge>
         </IconButton>
-        <Link href={"/login"}> Minha Conta</Link>
       </Box>
       </Toolbar>
       <Toolbar
@@ -59,6 +59,7 @@ export default function Header() {
       >
         {sections.map((section) => (
           <Link
+            className='link-nav'
             color="inherit"
             key={section.title}
             href={section.url}
@@ -67,6 +68,6 @@ export default function Header() {
           </Link>
         ))}
       </Toolbar>
-    </React.Fragment>
+    </S.Header>
   );
 }

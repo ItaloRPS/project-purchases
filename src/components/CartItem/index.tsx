@@ -1,9 +1,9 @@
 import * as React from 'react';
+import * as S from './styles'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { formatPrince } from '@/src/util/formatPrince';
 import { InputAmount } from '../InputAmount';
@@ -25,30 +25,37 @@ export const CartItem:React.FC<CartItemProps> = ({item, onChange, onRemove})=> {
 
   return (
     <Card variant="outlined" 
-      sx={{ Width:'100%',
-            display:'flex', 
-            border:'none', 
-            marginBottom:0.5,
-            borderBottom:'solid 1px #e8e8e8',
-            borderRadius:0}}>
+      sx={{
+        display: 'flex',
+        flexWrap: 'nowrap',
+        maxWidth:'100vh',
+        border:'none',
+        marginBottom:0.5,
+        borderBottom:'solid 1px #e8e8e8',
+        borderRadius:1}}>
+            
       <CardMedia
-        sx={{ width: 120 }}
+        sx={{ width: 100, height:100 }}
         image={item.image}
         title={item.name}
       />
-      <CardContent sx={{display:'flex', alignItems:'center', flexDirection:'column',paddingTop:"5px",flexGrow:1} }>
-        <Typography gutterBottom variant="h6" color= 'darkgrey'>
-        {item.name}
-        </Typography>
-        <Typography gutterBottom variant="h6" >
-          
-          {formatPrince((item.price*item.amount))}
-        </Typography>
-        <Box sx={{maxWidth:'65px', minWidth:'5px'}}>
+      <CardContent sx={{flex: 1,padding: '0px 0px 0px 8px',display:'flex',alignItems:'center',flexDirection:'column',gap:1}}>
+        <S.Description>
+          {item.name}
+        </S.Description>
+        <Box sx={{display:'flex',flexDirection:'column'}}>
+          <S.Size>
+            Tamanho:G
+          </S.Size>
+          <S.Prince>
+            {formatPrince((item.price*item.amount))}
+          </S.Prince>
+        </Box>
+        <Box sx={{maxWidth:'65px', minWidth:'5px',marginBottom:1}}>
           <InputAmount error='' onChange={handleAmountChange} />
         </Box>
       </CardContent>
-      <CardActions sx={{display:'flex', alignItems:'center', flexDirection:'column'}}>
+      <CardActions sx={{paddingLeft:0}}>
         <IconButton aria-label="delete" size="small" onClick={()=>onRemove(item)}>
           <DeleteIcon fontSize="inherit" />
         </IconButton>

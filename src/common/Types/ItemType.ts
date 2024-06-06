@@ -4,6 +4,7 @@ export type ItensProps = {
       image: string;
       rating: number;
       price: number;
-      amount:number
+      amount:number;
+      category:string;
       coditem?:string
   }
