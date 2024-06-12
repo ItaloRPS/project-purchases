@@ -19,6 +19,8 @@ export const GlobalStyles = createGlobalStyle`
     background: linear-gradient(155deg, rgba(2, 0, 36, 1), rgba(9, 9, 121, 1), rgba(0, 212, 255, 1));
     background-size: 100% 100%;
     background-attachment: fixed;
+    padding-right: 0px!important ;
+    overflow:auto!important;
   }
 
   .link-nav{

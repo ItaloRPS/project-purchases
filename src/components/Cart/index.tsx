@@ -33,7 +33,7 @@ export const Cart = ()=> {
     }
 
     return (
-        <ModalLeft openModal={showCart}>
+        <ModalLeft open={showCart}>
           <S.HeaderItem>
           <IconButton disableRipple={true} size={"small"} onClick={()=>setShowCart((v)=>!v)}>
             <CloseIcon  />

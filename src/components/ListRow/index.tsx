@@ -67,7 +67,7 @@ export const ListRow: React.FC<ListRowProps> = ({ children }) => {
                 </S.List>
                 <IconButton color="primary" sx={{
                     right: "-35px",
-                    zIndex: 2222,
+                    zIndex: 2,
                     position: 'absolute',
                     background: 'white',
                     '&:hover': {

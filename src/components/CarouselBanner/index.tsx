@@ -9,7 +9,7 @@ type CarrosselBannerProps = {
 
 export const CarrosselBanner:React.FC<CarrosselBannerProps> = ({children}) => {
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -18,6 +18,7 @@ export const CarrosselBanner:React.FC<CarrosselBannerProps> = ({children}) => {
     autoplaySpeed: 3200,
     nextArrow: <></>,
     prevArrow: <></>,
+    
   };
 
   return (

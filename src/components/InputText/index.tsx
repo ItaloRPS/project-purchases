@@ -6,10 +6,10 @@ type InputTextProps  = {
   error?: string;
 }& InputHTMLAttributes<HTMLInputElement>
 
-export const InputText:FC<InputTextProps>= ({icon, error,...inputProps })=>{
+export const InputText:FC<InputTextProps>= ({icon, error='',...inputProps })=>{
     return (
        <S.Container>
-         <S.InputContainer hasError={!!error} className="input-container">
+         <S.InputContainer error={error} className="input-container">
           {icon && <S.Icon className="icon">{icon}</S.Icon>}
           <S.Input {...inputProps }  />
         </S.InputContainer>

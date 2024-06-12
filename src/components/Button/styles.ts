@@ -48,6 +48,10 @@ export type colors = {
     background-color: ${theme.colors[color]};
     color: ${color === 'light' ? '#000' : '#fff'};
     transition: background-color 0.3s;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         background-color: ${shadeColor(theme.colors[color], -0.1)};

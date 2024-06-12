@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
 type InputProps = {
-    hasError:boolean,
+    error:string,
     theme:DefaultTheme
 }
 
@@ -14,12 +14,12 @@ export const Container = styled.div`
 `;
 
 export const InputContainer = styled.div<InputProps>`
-  ${({ theme:DefaultTheme, hasError}) => css`
+  ${({ theme:DefaultTheme, error}) => css`
   display: flex;
     align-items: center;
     border-radius: 25px;
     margin: 5px;
-    border: 1px solid ${(hasError ? 'red' : '#ccc')};
+    border: 1px solid ${(!!error ? 'red' : '#ccc')};
     background: #ebebeb7a;
 
     &:focus-within{

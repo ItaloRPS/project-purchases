@@ -15,7 +15,7 @@ export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
   const [scrollx,setScrollx] = useState(-400)
 
   const items = [{
-    id:"2",
+    id:"1",
     name: "Teste",
     image: "https://source.unsplash.com/random?wallpapers",
     rating:4.5,
@@ -24,7 +24,7 @@ export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
     category: "Esportes",
 },
   {
-    id:"3",
+    id:"2",
     name: "Teste 1",
     image: "https://source.unsplash.com/random?wallpapers",
     rating:4.5,
@@ -64,7 +64,7 @@ export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
   amount: 1,
   category: "Esportes",
 },{
-  id:"8",
+  id:"7",
   name: "Teste 6 Teste xefer",
   image: "https://source.unsplash.com/random?wallpapers",
   rating:4.5,
@@ -80,7 +80,7 @@ export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
   amount: 1,
   category: "Esportes",
 },{
-  id:"8",
+  id:"9",
   name: "Teste 8Teste xefer",
   image: "https://source.unsplash.com/random?wallpapers",
   rating:4.5,
@@ -88,7 +88,7 @@ export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
   amount: 1,
   category: "Esportes",
 },{
-  id:"8",
+  id:"10",
   name: "Teste 9Teste xefer",
   image: "https://source.unsplash.com/random?wallpapers",
   rating:4.5,
@@ -96,7 +96,7 @@ export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
   amount: 1,
   category: "Esportes",
 },{
-  id:"8",
+  id:"11",
   name: "Teste 9Teste xefer",
   image: "https://source.unsplash.com/random?wallpapers",
   rating:4.5,
@@ -104,7 +104,7 @@ export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
   amount: 1,
   category: "Esportes",
 },{
-  id:"8",
+  id:"12",
   name: "Teste 10Teste xefer",
   image: "https://source.unsplash.com/random?wallpapers",
   rating:4.5,
@@ -131,10 +131,10 @@ const post = {
               <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 1" />
           </Link>
           <Link href={'/'}>
-              <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 1" />
+              <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 2" />
           </Link>
           <Link href={'/'}>
-              <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 1" />
+              <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 3" />
           </Link>
         </CarrosselBanner>
         <S.Emphasis>

@@ -5,9 +5,19 @@ import { MdEmail } from "react-icons/md";
 import { InputText } from "@/src/components/InputText";
 import { Button } from "@/src/components/Button";
 import { LoadingSpinner } from "@/src/components/LoadingSpinner";
+import { FcGoogle } from "react-icons/fc";
+
+
+type HandleProps = {
+  payload:string
+  context?:{
+    email: string;
+    password: string;
+  }
+}
 
 interface InputTextProps  {
-  onLogin?: (email: string, password: string) => Promise<void>;
+  onLogin?: (action:HandleProps) => Promise<void>;
   error?: string;
 }
 export const FormLogin:FC<InputTextProps>= ({onLogin, error})=>{
@@ -16,21 +26,34 @@ export const FormLogin:FC<InputTextProps>= ({onLogin, error})=>{
   const [password, setPassword] = useState(''); 
   const [loading, setLoading] = useState(false);
   const [accessError, setAccessError] = useState('');
-  
+  const [clickedButton, setClickedButton] = useState('');
   
   const handleSubmit = async (event: React.FormEvent) => {
-    setLoading(true);
     event.preventDefault();
-    if (!email || !password) {
-      setAccessError("Preencha todos os campos");
-      setLoading(false);
-      return 
+    let action:HandleProps
+    if (clickedButton === "credentials") {
+      setLoading(true);
+      if (!email || !password) {
+        setAccessError("Preencha todos os campos");
+        setLoading(false);
+        return 
+      }
+      action = {
+        payload:'credentials',
+        context:{
+          email,
+          password
+        }
+      }
+      
+    }else{
+      action = {
+        payload:'google',
+      }
     }
-
     if (onLogin) {
-      await onLogin(email, password);
+     await onLogin(action);
     }
-
     setLoading(false);
   };
     return (
@@ -41,8 +64,11 @@ export const FormLogin:FC<InputTextProps>= ({onLogin, error})=>{
           <InputText icon={<MdEmail/>} placeholder="Email" onChange={(v) => [setEmail(v.target.value),,setAccessError("")]} error={accessError}/>
           <InputText icon={<IoMdLock/>} type='password' placeholder="Senha"  onChange={(v) => [setPassword(v.target.value),setAccessError("")]} error={accessError}/>
         </S.FormContainer>
-        {!error&&<S.Error>{error}</S.Error>}
-        <Button disabled={loading}>{loading ? <>Aguarde... <LoadingSpinner size="20" color="white"/></>:'Acessar'}</Button>
+        {!!error&&<S.Error>{error}</S.Error>}
+        <Button disabled={loading} onClick={()=>setClickedButton("credentials")}>{loading ? <>Aguarde... <LoadingSpinner size="20" color="white"/></>:'Acessar'}</Button>
+        <Button color="secondary" onClick={()=>setClickedButton("google")} key={""}>
+          <FcGoogle style={{fontSize:16}}/>Acessar com Google
+        </Button >
       </S.Container>
     </S.Wrapper>
       );

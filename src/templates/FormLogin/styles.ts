@@ -20,6 +20,7 @@ export const Container = styled.div`
     box-shadow: 1px 4px 5px -3px black;
     max-width: 73vw;
     min-width: 22vw;
+    position: relative;
   `}
 `;
 
@@ -42,6 +43,22 @@ export const Error = styled.p`
     font-size: 13px;
     color: #c00000;
     margin-left: 10px;
+  `}
+`;
+
+export const Break = styled.p`
+  ${({ theme:DefaultTheme }) => css`
+  font-weight: 600;
+    color: red;
+    text-align: center;
+    &::after{
+      content: '_______________';
+      padding-left: 5px;
+}
+    &::before{
+      content: '_______________';
+      padding-right: 5px;
+}
   `}
 `;
 
