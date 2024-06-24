@@ -43,7 +43,7 @@ export default async function Header() {
             key={section.title}
             href={section.url}
           >
-            {section.title}
+            {section.title.toUpperCase()}
           </Link>
         ))}
       </Toolbar>

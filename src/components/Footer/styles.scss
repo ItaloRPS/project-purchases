@@ -3,12 +3,13 @@
 
 .footer-style{
     background-color:$secondary;
-    padding: 75px;
     color: $light;
     text-align: center;
+    padding: 75px;
     position: static;
     bottom: 0;
     margin-top: 35px;
     width: 100%;
     border-top:solid 1px #cdcecf;
+    height: 52vh;
 }

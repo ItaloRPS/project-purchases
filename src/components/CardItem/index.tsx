@@ -73,7 +73,7 @@ export const CardItem:React.FC<cartItemProp> = ({item})=> {
           top:5,
           right:5,
           display:'none',
-          background:'#f0f8ff9c; &:hover{color:#3f51b5}'}} className='btn-add-Cart'
+          background:'#f0f8ff9c; &:hover{color:#181818}'}} className='btn-add-Cart'
           onClick={addItemToCart}> 
           <ShoppingCartIcon/>
         </IconButton>
