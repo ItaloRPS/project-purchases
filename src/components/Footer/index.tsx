@@ -1,10 +1,11 @@
-import * as S from './styles'
+import './styles.scss'
 
-export const Footer = () => {
-    return (
-      <S.FooterContainer>
-        <p>© 2024 Seu Nome. Todos os direitos reservados.</p>
-      </S.FooterContainer>
-    );
-  };
+const Footer = () => {
+  return (
+      <footer className='footer-style'>
+          <p>© 2024 Seu Nome. Todos os direitos reservados.</p>
+      </footer>
+  );
+};
 
+export default Footer;

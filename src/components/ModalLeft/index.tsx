@@ -1,4 +1,4 @@
-import * as S from './styles'
+import './styles.scss'
 
 export type ModalProps ={
     open:boolean
@@ -6,5 +6,5 @@ export type ModalProps ={
   }
 
 export const ModalLeft:React.FC<ModalProps> = ({open, children}) =>{
-    return <S.Wrapper open={open}>{children}</S.Wrapper>
+    return <div className={`wrapper-modal ${!open&&'show-modal'}`}>{children}</div>
 }

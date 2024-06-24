@@ -1,4 +1,3 @@
-import api from '../../api/'
 
 export type CredentialsProps = {
     email:string
@@ -8,12 +7,23 @@ export type CredentialsProps = {
 export const Auth = {
 
     sideIn: async(data:CredentialsProps) => {
-        try {
-          const res = await api.post('auth/login', data, {headers:{'Content-Type': 'application/json'}})
-          return {data:res.data?.access_token, status:200}
-        } catch (error) {
-            throw {data:"Unauthorized", status:401}
+      try {
+        const response = await fetch(`${process.env.APP_BASE_URL}/auth/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error('Unauthorized');
         }
+        const result = await response.json();
+        return { data: result.access_token, status: 200 };
+    } catch (error) {
+        throw { data: "Unauthorized", status: 401 };
+    }
       },
     
 }

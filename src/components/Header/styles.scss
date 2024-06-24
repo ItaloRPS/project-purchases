@@ -1,0 +1,46 @@
+@import '../../styles/theme.scss';
+
+$z-index-header: 3;
+$logo-width: 46px;
+
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: $z-index-header;
+
+}
+
+.logo {
+  width: $logo-width;
+}
+
+.link-login{
+  color: $light;
+  font-size: 12px;
+}
+
+.link-nav{
+  font-size: 13px;
+  text-transform: capitalize;
+  color: $dark;
+  font-weight: 800;
+  padding: 10px;
+  text-decoration: none;
+  position: relative;
+}
+.link-nav:hover{
+  color: $secondary;
+}
+.link-nav:hover::after {
+
+      content: ''; 
+      position: absolute; 
+      color: $primary;
+      left: 0; 
+      bottom: -2px; 
+      width: 100%; 
+      height: 3px; 
+      background-color: $dark; 
+  }

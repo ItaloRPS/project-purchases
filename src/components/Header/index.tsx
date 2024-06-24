@@ -1,48 +1,36 @@
 import * as React from 'react';
-import * as S from './styles'
-import Link from 'next/link'
+import './styles.scss';
+import Link from 'next/link';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import { Badge, Box, InputAdornment, TextField, Typography } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import {InputSearch} from '../InputSearch';
-import { useAppPurchases } from '@/src/hooks/useApp';
-import { useSession } from 'next-auth/react';
+import {Box} from '@mui/material';
+import { InputSearch } from '../InputSearch';
+import { authOptions } from '../../app/api/auth/[...nextauth]/route';
 import { UserOptions } from '../UserOptions';
+import { getServerSession } from 'next-auth';
+import { ButtonCart } from '../ButtonCart';
 
-
-
-export default function Header() {
-  const { data: session, status } = useSession();
-  // const { sections, title } = props;
+export default async function Header() {
+  const session = await getServerSession(authOptions)
   const { sections, title } = {
-    sections:[{title:"esportes",url:'/teste'},{title:"outros",url:'/testes'}],
-    title:"teste"
+    sections: [{ title: "esportes", url: '/teste' }, { title: "outros", url: '/testes' }],
+    title: "teste"
   };
-  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-  const handleSubmit = (event:React.FormEvent)=>{
-    event.preventDefault()
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const inputValue = formData.get('inputSearch')
-    console.log(inputValue);
-   
-  }
-  const {cartItems,setShowCart} = useAppPurchases()
-  
+  const settings = ['Profile', 'Account', 'Dashboard'];
+
+  const handleSubmit = async (dataForm:FormData) => {
+    "use server"
+    console.log(dataForm);
+  };
+
   return (
-    <S.Header>
+    <header className="header">
       <Toolbar sx={{ justifyContent: 'space-between', borderBottom: 1, borderColor: 'divider' ,background:"black", gap:'5px', minHeight:'50px'}}>
-      <S.Logo src='/images/logo.png' alt='Logo do site'/>
-      <Box sx={{ display: { xs: 'flex' }, gap:'13px' }} alignItems="center">
-      <InputSearch onSubmit={handleSubmit}/>
-        {session?<UserOptions settings={settings}/>:<Link href={"/login"}> Minha Conta</Link>}
-        <IconButton onClick={()=>setShowCart((v)=> !v)}>
-          <Badge badgeContent={cartItems.length} color="primary">
-            <ShoppingCartIcon style={{width:'20px', height:'20px',color:'white'}}/>
-          </Badge>
-        </IconButton>
-      </Box>
+        <Link href={"/"}><img src='/images/logo.png' alt='Logo do site' className="logo" /></Link>
+        <Box sx={{ display: { xs: 'flex' }, gap:'13px' }} alignItems="center">
+          <InputSearch action={handleSubmit} />
+          {session ? <UserOptions settings={settings} /> : <Link href="/login" className='link-login'>Minha Conta</Link>}
+          <ButtonCart/>
+        </Box>
       </Toolbar>
       <Toolbar
         component="nav"
@@ -52,7 +40,6 @@ export default function Header() {
         {sections.map((section) => (
           <Link
             className='link-nav'
-            color="inherit"
             key={section.title}
             href={section.url}
           >
@@ -60,6 +47,6 @@ export default function Header() {
           </Link>
         ))}
       </Toolbar>
-    </S.Header>
+    </header>
   );
 }

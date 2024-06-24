@@ -1,0 +1,60 @@
+// theme.scss
+
+$primary: #065ea4;
+$secondary: #6c757d;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
+$light: #f8f9fa;
+$dark: #343a40;
+
+$font-family: (
+  default: 'Open Sans, sans-serif',
+  secondary: 'Montserrat, sans-serif',
+);
+
+$font-sizes: (
+  xxsmall: 0.5rem,
+  xsmall: 1rem,
+  small: 1rem,
+  normal: 1rem,
+  medium: 2rem,
+  large: 3rem,
+  xlarge: 4rem,
+  xxlarge: 4.2rem,
+  huge: 5rem,
+  xhuge: 6rem,
+  xxhuge: 7rem,
+  hero: 8rem,
+  xhero: 8.2rem,
+  xxhero: 9rem,
+);
+
+$media-queries: (
+  lteOrEqSmallest: '(max-width: 320px)',
+  lteOrEqSmall: '(max-width: 576px)',
+  lteOrEqMedium: '(max-width: 768px)',
+  lteOrEqLarge: '(max-width: 992px)',
+  gteOrEqSmallest: '(min-width: 320px)',
+  gteOrEqSmall: '(min-width: 576px)',
+  gteOrEqMedium: '(min-width: 768px)',
+  gteOrEqLarge: '(min-width: 992px)',
+);
+
+$spacings: (
+  xxtiny: 0.1rem,
+  xtiny: 0.2rem,
+  tiny: 0.4rem,
+  xxsmall: 0.8rem,
+  xsmall: 1.2rem,
+  small: 1.6rem,
+  mediumSmall: 2rem,
+  medium: 2.4rem,
+  mediumLarge: 2.8rem,
+  large: 3.2rem,
+  xlarge: 3.6rem,
+  xxlarge: 4rem,
+  huge: 4.4rem,
+  xhuge: 4.8rem,
+)

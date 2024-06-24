@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
-import * as S from './styles'
+import './styles.scss'
 
 export type FeaturedPostProps = {
   post: {
@@ -65,7 +65,7 @@ export const FeaturedPost:React.FC<FeaturedPostProps> = ({post}) =>{
                 {post.title}
                 </Typography>
                 <Typography variant="h5" color="inherit" paragraph>
-                {post.title} <S.Span>{post.price}</S.Span>
+                {post.title} <span className='span-price'>{post.price}</span>
                 </Typography>
             </Box>
             </Grid>

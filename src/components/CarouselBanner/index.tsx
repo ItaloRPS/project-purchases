@@ -1,7 +1,9 @@
-// components/Carrossel.js
+'use client'
 import React from 'react';
-import Slider from 'react-slick';
-import * as S from './styles'
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './styles.scss'
 
 type CarrosselBannerProps = {
   children:React.ReactNode
@@ -22,11 +24,11 @@ export const CarrosselBanner:React.FC<CarrosselBannerProps> = ({children}) => {
   };
 
   return (
-    <S.Wapper>
+    <div className='wapper-banner'>
         <Slider {...settings}>
             {children}
         </Slider>
-    </S.Wapper>
+    </div>
   );
 };
 

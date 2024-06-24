@@ -1,5 +1,6 @@
+'use client'
 import { IconButton } from '@mui/material'
-import * as S from './styles'
+import './styles.scss'
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import React, { useRef, useState, useEffect } from 'react';
@@ -47,8 +48,8 @@ export const ListRow: React.FC<ListRowProps> = ({ children }) => {
     }
 
     return (
-        <S.Wapper>
-            <S.Container ref={containerRef}>
+        <div className='wrapper-list'>
+            <div className='container-list' ref={containerRef}>
                 <IconButton color="primary" sx={{
                     left: '-35px',
                     position: 'absolute',
@@ -62,9 +63,9 @@ export const ListRow: React.FC<ListRowProps> = ({ children }) => {
                     disabled={listPosition === 0}>
                     <NavigateBeforeIcon />
                 </IconButton>
-                <S.List position={scrollx} ref={listRef}>
+                <div className='list' style={{ transform:` translate3d(-${scrollx}px, 0px, 0px)`}} ref={listRef}>
                     {children}
-                </S.List>
+                </div>
                 <IconButton color="primary" sx={{
                     right: "-35px",
                     zIndex: 2,
@@ -77,7 +78,7 @@ export const ListRow: React.FC<ListRowProps> = ({ children }) => {
                     disabled={listPosition === maxPosition}>
                     <NavigateNextIcon />
                 </IconButton>
-            </S.Container>
-        </S.Wapper>
+            </div>
+        </div>
     )
 }

@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -6,9 +7,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
-import { formatPrince } from '@/src/util/formatPrince';
-import { useAppPurchases } from '@/src/hooks/useApp';
-import { ItensProps } from '@/src/common/Types/ItemType';
+import { formatPrince } from '@/util/formatPrince';
+import { useAppPurchases } from '@/hooks/useApp';
+import { ItensProps } from '@/common/Types/ItemType';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
 import Link from 'next/link';
@@ -57,7 +58,7 @@ export const CardItem:React.FC<cartItemProp> = ({item})=> {
         <Link href={`/product/${item.id}`} style={{fontSize:15}}>
           {item.name}
         </Link>
-        <Typography gutterBottom variant='h5' fontWeight={600} sx={{color:'#000000'}}>
+        <Typography gutterBottom variant='h5' fontWeight={600} sx={{color:'#000000',fontSize:'17px'}}>
           {formatPrince(item.price)}
         </Typography>
         <Rating

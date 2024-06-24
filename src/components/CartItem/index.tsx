@@ -1,14 +1,15 @@
+'use client'
 import * as React from 'react';
-import * as S from './styles'
+import './styles.scss'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { formatPrince } from '@/src/util/formatPrince';
+import { formatPrince } from '@/util/formatPrince';
 import { InputAmount } from '../InputAmount';
 import { Box, IconButton } from '@mui/material';
-import { ItensProps } from '@/src/common/Types/ItemType';
+import { ItensProps } from '@/common/Types/ItemType';
 
 type CartItemProps = {
   onChange:(v:ItensProps)=> void
@@ -40,16 +41,16 @@ export const CartItem:React.FC<CartItemProps> = ({item, onChange, onRemove})=> {
         title={item.name}
       />
       <CardContent sx={{flex: 1,padding: '0px 0px 0px 8px',display:'flex',alignItems:'center',flexDirection:'column',gap:1}}>
-        <S.Description>
+        <span className='description'>
           {item.name}
-        </S.Description>
+        </span>
         <Box sx={{display:'flex',flexDirection:'column'}}>
-          <S.Size>
+          <span className='size'>
             Tamanho:G
-          </S.Size>
-          <S.Prince>
+          </span>
+          <span className='price'>
             {formatPrince((item.price*item.amount))}
-          </S.Prince>
+          </span>
         </Box>
         <Box sx={{maxWidth:'65px', minWidth:'5px',marginBottom:1}}>
           <InputAmount error='' onChange={handleAmountChange} />

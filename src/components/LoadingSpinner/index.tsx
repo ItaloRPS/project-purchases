@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import * as S from './styles'
+import './styles.scss'
 
 export type LoadingSpinnerProps = {
     size?:string;
@@ -8,6 +8,6 @@ export type LoadingSpinnerProps = {
 
 export const LoadingSpinner:FC<LoadingSpinnerProps> = ({ size = "40", color = '#007bff'}) => {
     return (
-      <S.Spinner size={size} color={color}/>
+      <div className='border-top-colo' style={{borderColor:color,width:size,height:size}}/>
     );
   };

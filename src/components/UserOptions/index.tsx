@@ -1,4 +1,6 @@
+"use client"
 import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from "@mui/material"
+import {signOut} from 'next-auth/react';
 import { useState } from "react";
 
 type UserOptionsProps = {
@@ -49,6 +51,9 @@ return(
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem key="logout" onClick={()=>signOut({callbackUrl:'/login'})}>
+                  <Typography textAlign="center">Sair</Typography>
+              </MenuItem>
             </Menu>
         </Box>
     </>

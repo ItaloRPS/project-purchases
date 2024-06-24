@@ -1,4 +1,4 @@
-import * as S from './styles'
+import './styles.scss'
 import {InputHTMLAttributes, useState } from 'react';
 
 type InputAmountProps  = {
@@ -24,10 +24,10 @@ export const InputAmount:React.FC<InputAmountProps> = ({error, onChange,...input
   console.log(amount)
 
     return (
-        <S.AmountContainer>
-          <S.Button  onClick={decreaseValue} >-</S.Button>
-          <S.AmountInput type="text" {...inputProps }  min={1} value={amount}/>
-          <S.Button  onClick={increaseValue}>+</S.Button>
-        </S.AmountContainer>
+        <div className="amount-container">
+          <button className="button"  onClick={decreaseValue} >-</button>
+          <input className="amount-input"  type="text" {...inputProps }  min={1} value={amount}/>
+          <button className="button" onClick={increaseValue}>+</button>
+        </div>
       );
   };

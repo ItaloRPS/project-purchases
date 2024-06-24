@@ -1,0 +1,19 @@
+
+.wrapper-modal {
+  width: 100%;
+  max-width: 330px;
+  background-color: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 400ms ease;
+  z-index: 3  ;
+}
+.show-modal{
+  transform: translate(110%, 0);
+}

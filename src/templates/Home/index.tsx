@@ -1,10 +1,9 @@
-import {FC, useState } from "react";
-import * as S from './styles'
-import { CardItem } from "@/src/components/CardItem";
-
-import { FeaturedPost } from "@/src/components/FeaturedPost";
-import { CarrosselBanner } from "@/src/components/CarouselBanner";
-import { ListRow } from "@/src/components/ListRow";
+import {FC } from "react";
+import './styles.scss'
+import { CardItem } from "@/components/CardItem";
+import { FeaturedPost } from "@/components/FeaturedPost";
+import { CarrosselBanner } from "@/components/CarouselBanner";
+import { ListRow } from "@/components/ListRow";
 import Link from "next/link";
 
 interface InputTextProps  {
@@ -12,7 +11,6 @@ interface InputTextProps  {
   error?: string;
 }
 export const HomePage:FC<InputTextProps>= ({onLogin, error})=>{
-  const [scrollx,setScrollx] = useState(-400)
 
   const items = [{
     id:"1",
@@ -125,31 +123,31 @@ const post = {
 
 
     return (
-      <S.Wrapper >
+      <div className="wrapper-home">
         <CarrosselBanner>
           <Link href={'/'}>
-              <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 1" />
+              <img className="img-banner" src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 1" />
           </Link>
           <Link href={'/'}>
-              <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 2" />
+              <img className="img-banner" src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 2" />
           </Link>
           <Link href={'/'}>
-              <S.ImgBanner src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 3" />
+              <img className="img-banner" src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 3" />
           </Link>
         </CarrosselBanner>
-        <S.Emphasis>
+        <div className="emphasis">
           <ListRow>
               {items.map((item)=><CardItem item={item} key={item.id}></CardItem>)}
           </ListRow>
-        </S.Emphasis>
-        <S.PostCategory>
+        </div >
+        <div className="post-category">
           <FeaturedPost post={post} ></FeaturedPost>
           <FeaturedPost post={post} ></FeaturedPost>
-        </S.PostCategory>
-        <S.PostCategory>
+        </div>
+        <div className="post-category">
           <FeaturedPost post={post} ></FeaturedPost>
           <FeaturedPost post={post} ></FeaturedPost>
-        </S.PostCategory>
-    </S.Wrapper>
+        </div>
+    </div>
       );
 }

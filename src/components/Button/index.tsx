@@ -1,5 +1,5 @@
 import {FC, ReactNode } from "react";
-import * as S from './styles'
+import './styles.scss'
 
 interface ButtonProps{
   color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
@@ -9,8 +9,8 @@ interface ButtonProps{
 }
 export const Button:FC<ButtonProps>= ({color="success", disabled, onClick ,children })=>{
     return (
-       <S.ButtonStyled color={color} onClick={onClick} >
+       <button className={color} onClick={onClick} >
             {children}
-       </S.ButtonStyled>
+       </button>
       );
 }

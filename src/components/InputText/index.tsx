@@ -1,19 +1,19 @@
-import {FC, ReactNode,InputHTMLAttributes } from "react";
-import * as S from './styles'
+import React, { FC, ReactNode, InputHTMLAttributes } from "react";
+import './styles.scss'; 
 
-type InputTextProps  = {
+type InputTextProps = {
   icon?: ReactNode;
   error?: string;
-}& InputHTMLAttributes<HTMLInputElement>
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export const InputText:FC<InputTextProps>= ({icon, error='',...inputProps })=>{
-    return (
-       <S.Container>
-         <S.InputContainer error={error} className="input-container">
-          {icon && <S.Icon className="icon">{icon}</S.Icon>}
-          <S.Input {...inputProps }  />
-        </S.InputContainer>
-        {error&&<S.Error>{error}</S.Error>}
-      </S.Container>
-      );
-}
+export const InputText: FC<InputTextProps> = ({ icon, error = '', ...inputProps }) => {
+  return (
+    <div className="container">
+      <div className={`input-container ${error ? 'error' : ''}`}>
+        {icon && <span className="icon">{icon}</span>}
+        <input className="input" {...inputProps} />
+      </div>
+      {error && <p className="error">{error}</p>}
+    </div> 
+  );
+};
