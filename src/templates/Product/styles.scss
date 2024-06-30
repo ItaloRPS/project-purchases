@@ -1,0 +1,24 @@
+.product-template {
+    margin: 15px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 35px;
+
+    .item-template:nth-child(1) {
+        grid-column: span 4;
+    }
+
+    .item-template:nth-child(2) {
+        grid-column: span 5;
+    }
+
+    @media (max-width: 768px) {
+        .item-template:nth-child(1) {
+            grid-column: span 9;
+        }
+
+        .item-template:nth-child(2) {
+            grid-column: span 9;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+.sizes{
+    background: #f9f9f9;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+
+}
+
+.card-Actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+    margin: 15px;
+}
