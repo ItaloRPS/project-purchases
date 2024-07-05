@@ -17,6 +17,7 @@ label{
   border-radius: 4px;
   border: 1px solid rgba(61, 61, 61, 0.5);
   color: black;
+  
 
   &:hover{
       transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -32,7 +33,30 @@ input[type="radio"], input[type="checkbox"]  {
 }
 
 input[type=radio]:checked + label, input[type=checkbox]:checked + label{
-    color: rgb(191, 191, 191);
+    color: rgb(238, 238, 238);
     background-color: black;
     border-color: #e6e6e6;
+}
+
+.unavailable{
+  &::after{
+    content: "";
+    position: absolute;
+    height: 50px;
+    left: 50%;
+    top: -8px;
+    width: 1px;
+    background: #000;
+    -webkit-transform: rotate(-50deg) translate(-50%);
+    transform: rotate(-50deg) translate(-50%);
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+
+    &:hover{
+      transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      background-color: rgba(25, 118, 210, 0.04);
+      border: 1px solid #7e8081;
+      color: black
+   } 
+  }
 }

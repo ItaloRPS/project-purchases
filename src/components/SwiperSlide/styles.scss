@@ -1,0 +1,62 @@
+@import '../../styles/theme.scss';
+
+.img-slider{
+  text-align: -webkit-center;
+  cursor: grab;
+}
+.slider-container{
+  position: relative;
+  img{
+      width: 79vh;
+      height: 79vh;
+      object-fit: cover;
+      border-radius: 15px;
+  }
+}
+
+.btns-actions{
+  position: absolute;
+  bottom: 25px;
+  left: 61px;
+  display: flex;
+  gap: 16px;
+  button{
+      background: $dark;
+      border-radius: 25px;
+      color: $light;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      &:hover{
+          background: $secondary;
+      }
+  }
+  svg{
+      font-size:15px
+  }
+}
+
+.options-slider-container{
+  margin-top: 5px;
+  img{
+    width: 125px;
+    height: 125px;
+    border-radius: 15px;
+    object-fit: cover;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-container{
+      img{
+          width: 79vw;
+          height: 79vw;
+          object-fit: cover;
+      }
+  }
+  .options-slider-container{
+    display: none;
+  }
+}

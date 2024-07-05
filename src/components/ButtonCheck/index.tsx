@@ -5,13 +5,14 @@ type ButtonCheck = {
     id: string
     children:string
     value:string|number
+    disabled?:boolean
 }
 
-export const ButtonCheck = ({type, name, id, value, children}:ButtonCheck) => {
+export const ButtonCheck = ({type, name, id, value, disabled = false, children}:ButtonCheck) => {
     return (
         <>
-            <input type={type} name={name} id={id} value={value} />
-            <label htmlFor={id}>{children}</label>
+            <input type={type} name={name} id={id} value={value} disabled={disabled} />
+            <label htmlFor={id} className={(disabled?'unavailable':'')}>{children}</label>
         </>
         )
   }

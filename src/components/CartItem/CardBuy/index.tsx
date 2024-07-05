@@ -35,7 +35,7 @@ const card = (
             <ButtonCheck id='size-xg' name='size' value='XG' type='radio'>XG</ButtonCheck>
         </div>
        <div className='btn-buy'>
-            <Button size='small' variant="contained" className='btn-finish' sx={{background:'black',width:255}}>Comparar</Button>
+            <Button size='small' variant="contained" className='btn-finish' sx={{background:'black',width:'100%',height:'41px'}}>Comparar</Button>
         </div>
     </div>
   </React.Fragment>
