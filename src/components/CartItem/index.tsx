@@ -29,6 +29,7 @@ export const CartItem:React.FC<CartItemProps> = ({item, onChange, onRemove})=> {
       sx={{
         display: 'flex',
         flexWrap: 'nowrap',
+        minWidth:'260px',
         maxWidth:'100vh',
         border:'none',
         marginBottom:0.5,

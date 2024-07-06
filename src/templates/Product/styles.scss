@@ -14,6 +14,10 @@
         grid-column: span 5;
     }
 
+    .item-template:nth-child(3) {
+        grid-column: span 9;
+    }
+
     @media (max-width: 768px) {
         .item-template:nth-child(1) {
             grid-column: span 9;
@@ -25,3 +29,25 @@
     }
 }
 
+.cards-related{
+    overflow: scroll;
+
+}
+.cards-related-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-auto-flow: column;
+    gap:25px;
+    width: 100%;
+    padding: 25px;
+    >div{
+    width: 255px;
+  }
+}
+
+.related-items{
+    margin: 15px;
+    h2{
+        text-align: center;
+    }
+}

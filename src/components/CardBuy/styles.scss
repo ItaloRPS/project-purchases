@@ -24,8 +24,17 @@
     align-items: center;
     gap: 17px;
     margin: 15px;
+    width: 100%;
 }
 
 .btn-buy{
     width: 100%;
+}
+
+.category-item{
+    text-decoration: underline;
+    text-transform: uppercase;
+    &:hover{
+        color: black;
+    }
 }

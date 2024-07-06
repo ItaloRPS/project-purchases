@@ -62,6 +62,7 @@ export const CardItem:React.FC<cartItemProp> = ({item})=> {
           {formatPrince(item.price)}
         </Typography>
         <Rating
+        sx={{color:'black'}}
         name="rating"
         defaultValue={item.rating}
         precision={0.5}

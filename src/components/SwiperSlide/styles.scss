@@ -3,6 +3,9 @@
 .img-slider{
   text-align: -webkit-center;
   cursor: grab;
+  &:active{
+    cursor: grabbing;
+  }
 }
 .slider-container{
   position: relative;
@@ -45,6 +48,9 @@
     object-fit: cover;
     padding: 5px;
     cursor: pointer;
+    &:target{
+      cursor: grabbing;
+    }
   }
 }
 

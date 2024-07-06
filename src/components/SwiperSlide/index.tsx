@@ -27,12 +27,10 @@ export const SwiperSlide = ({data}:SwiperSlideProps) =>{
 
   const next = () => {
     sliderRef.current?.slickNext();
-    sliderRef2.current?.slickNext();
   };
 
   const previous = () => {
     sliderRef.current?.slickPrev();
-    sliderRef2.current?.slickPrev();
   };
   
   const settings = {
