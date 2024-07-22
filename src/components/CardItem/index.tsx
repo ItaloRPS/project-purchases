@@ -27,7 +27,7 @@ export const CardItem:React.FC<cartItemProp> = ({item})=> {
   }
 
   return (
-    <Card sx={{ maxWidth: 255, position:'relative; &:hover .btn-add-Cart{display:inline-flex;}'}}>
+    <Card sx={{ maxWidth: 255, maxHeight:'22rem', position:'relative; &:hover .btn-add-Cart{display:inline-flex;}'}}>
       <CardMedia
         sx={{ height: 230 }}
         image={item.image}

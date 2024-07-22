@@ -11,8 +11,8 @@ type ButtonCheck = {
 export const ButtonCheck = ({type, name, id, value, disabled = false, children}:ButtonCheck) => {
     return (
         <>
-            <input type={type} name={name} id={id} value={value} disabled={disabled} />
-            <label htmlFor={id} className={(disabled?'unavailable':'')}>{children}</label>
+            <input className='input-button-check' type={type} name={name} id={id} value={value} disabled={disabled} />
+            <label htmlFor={id} className={`label-button-check ${(disabled?'unavailable':'')}`}>{children}</label>
         </>
         )
   }

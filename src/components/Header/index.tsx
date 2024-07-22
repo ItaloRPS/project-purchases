@@ -12,7 +12,7 @@ import { ButtonCart } from '../ButtonCart';
 export default async function Header() {
   const session = await getServerSession(authOptions)
   const { sections, title } = {
-    sections: [{ title: "esportes", url: '/teste' }, { title: "outros", url: '/testes' }],
+    sections: [{ title: "esportes", url: '/category/esportes' }, { title: "outros", url: '/category/todos' }],
     title: "teste"
   };
   const settings = ['Profile', 'Account', 'Dashboard'];

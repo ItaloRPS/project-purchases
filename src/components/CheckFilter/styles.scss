@@ -1,0 +1,52 @@
+@import '../../styles/theme.scss';
+
+input[type="checkbox"],input[type="radio"]{
+    accent-color: $dark;
+    width: 25px;
+    height: 25px;
+}
+
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 28px; 
+    height: 28px;
+    border: 2px solid #d4d4d4f7;
+    border-radius: 3px; 
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #d4d4d4f7;
+  }
+  
+  input[type="radio"]:checked::before {
+      content: '✔';
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-color: $dark;
+    border-color: $dark;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 3px; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:$light;
+    font-size: 15px;
+}
+
+.aline-row{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    gap:3px;
+    color:#000000c2;
+}
+
+.aline-row label:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,25 @@
+
+@import '../../styles/theme.scss';
+
+.footer-style{
+    background-color:$secondary;
+    color: $light;
+    text-align: center;
+    padding: 75px;
+    position: static;
+    bottom: 0;
+    margin-top: 35px;
+    width: 100%;
+    border-top:solid 1px #cdcecf;
+    height: 52vh;
+}
+span.MuiSlider-root{
+    color: $dark;
+}
+
+.filter-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}

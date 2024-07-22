@@ -3,7 +3,7 @@ import './styles.scss'
 const Footer = () => {
   return (
       <footer className='footer-style'>
-          <p>© 2024 Seu Nome. Todos os direitos reservados.</p>
+          <p>© 2024 italo Silva. Todos os direitos reservados.</p>
       </footer>
   );
 };

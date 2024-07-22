@@ -1,6 +1,6 @@
 @import '../../styles/theme.scss';
 
-label{
+.label-button-check{
   display: inline-flex;
   justify-content: center;
   position: relative;
@@ -28,11 +28,11 @@ label{
 
 }
 
-input[type="radio"], input[type="checkbox"]  {
+.input-button-check {
   display: none;
 }
 
-input[type=radio]:checked + label, input[type=checkbox]:checked + label{
+.input-button-check:checked + label{
     color: rgb(238, 238, 238);
     background-color: black;
     border-color: #e6e6e6;
