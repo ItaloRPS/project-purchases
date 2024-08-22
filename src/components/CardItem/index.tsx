@@ -1,10 +1,8 @@
 'use client'
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import { formatPrince } from '@/util/formatPrince';
@@ -19,9 +17,10 @@ type cartItemProp ={
 }
 
 export const CardItem:React.FC<cartItemProp> = ({item})=> {
-  const {cartItems,setCartItems} = useAppPurchases()
+  const {cartItems, setCartItems} = useAppPurchases()
 
   const addItemToCart = ()=>{
+    console.log("entroiscx")
     const coditem = Math.floor(Math.random() * 0xFFFFFFFF).toString(16) + Date.now().toString(16)
     setCartItems([...cartItems, {...item,coditem}])
   }
@@ -75,7 +74,7 @@ export const CardItem:React.FC<cartItemProp> = ({item})=> {
           right:5,
           display:'none',
           background:'#f0f8ff9c; &:hover{color:#181818}'}} className='btn-add-Cart'
-          onClick={addItemToCart}> 
+          onClick={()=>addItemToCart()}> 
           <ShoppingCartIcon/>
         </IconButton>
     </Card>

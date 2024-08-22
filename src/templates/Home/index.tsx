@@ -5,6 +5,8 @@ import { FeaturedPost } from "@/components/FeaturedPost";
 import { CarrosselBanner } from "@/components/CarouselBanner";
 import { ListRow } from "@/components/ListRow";
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { ItensProps } from "@/common/Types/ItemType";
 
 interface InputTextProps  {
   onLogin?: (email: string, password: string) => Promise<void>;
@@ -126,13 +128,13 @@ const post = {
       <div className="wrapper-home">
         <CarrosselBanner>
           <Link href={'/'}>
-              <img className="img-banner" src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 1" />
+              <img className="img-banner" src="https://mithoficial.vtexassets.com/assets/vtex.file-manager-graphql/images/4074ca30-3588-4650-9b4d-b5e972d8c371___5ec52c8ed63f15fbc7539671a26dc707.png" alt="Imagem 1" />
           </Link>
           <Link href={'/'}>
-              <img className="img-banner" src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 2" />
+              <img className="img-banner" src="https://mithoficial.vtexassets.com/assets/vtex.file-manager-graphql/images/4074ca30-3588-4650-9b4d-b5e972d8c371___5ec52c8ed63f15fbc7539671a26dc707.png" alt="Imagem 2" />
           </Link>
           <Link href={'/'}>
-              <img className="img-banner" src="https://www.mithoficial.com.br/upload/banner/d58d40e4c72d4f7c97de1b9ed8eb3601.webp" alt="Imagem 3" />
+              <img className="img-banner" src="https://mithoficial.vtexassets.com/assets/vtex.file-manager-graphql/images/4074ca30-3588-4650-9b4d-b5e972d8c371___5ec52c8ed63f15fbc7539671a26dc707.png" alt="Imagem 3" />
           </Link>
         </CarrosselBanner>
         <div className="emphasis">

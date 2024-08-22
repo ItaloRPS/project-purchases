@@ -5,7 +5,7 @@ type appContextType = {
     setItems: React.Dispatch<React.SetStateAction<object[]| []>>;
     items:object[]|any;
 
-    setCartItems: React.Dispatch<React.SetStateAction<object[]| []>>;
+    setCartItems: (items: object[] | []) => void
     cartItems:object[]|any;
     
     showCart:boolean

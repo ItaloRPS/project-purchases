@@ -15,11 +15,12 @@ export const Cart = ()=> {
     },0)
 
     const removeItem = (data:ItensProps)=>{
-      setCartItems(i=>i.filter((item:any) => {
+      const items = cartItems.filter((item:any) => {
         if(item.coditem !== data.coditem){
           return item
         }
-      }))
+      })
+      setCartItems(items)
      
     }
 
