@@ -7,4 +7,5 @@ export type ItensProps = {
       amount:number;
       category:string;
       coditem?:string
+      size?:string
   }

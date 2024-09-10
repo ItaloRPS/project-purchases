@@ -1,3 +1,4 @@
+
 import './styles.scss'
 import React, {useRef } from "react";
 import "slick-carousel/slick/slick.css";
@@ -9,13 +10,11 @@ import Accordion from '@mui/material/Accordion';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { CardItem } from '@/components/CardItem';
 
-
-
 interface InputTextProps  {
   onLogin?: (email: string, password: string) => Promise<void>;
   error?: string;
 }
-export const ProductPage= ()=>{
+export const ProductPage = ()=>{
 
 const imgs =[{
   img:"https://images.tcdn.com.br/img/img_prod/891360/camisa_jeans_883_1_4ddc30ed65322ff548363c433753a01e.jpg",

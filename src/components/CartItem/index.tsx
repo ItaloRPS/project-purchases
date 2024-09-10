@@ -47,7 +47,7 @@ export const CartItem:React.FC<CartItemProps> = ({item, onChange, onRemove})=> {
         </span>
         <Box sx={{display:'flex',flexDirection:'column'}}>
           <span className='size'>
-            Tamanho:G
+            Tamanho:{item.size||'M'}
           </span>
           <span className='price'>
             {formatPrince((item.price*item.amount))}
