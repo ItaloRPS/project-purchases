@@ -1,0 +1,21 @@
+@import '../../../../styles/theme.scss';
+
+$z-index-header: 3;
+$logo-width: 46px;
+
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: $z-index-header;
+
+}
+
+.logo {
+  width: $logo-width;
+}
+
+h1,h2,h3{
+    color: white;
+}

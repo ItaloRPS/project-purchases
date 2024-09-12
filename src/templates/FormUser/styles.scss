@@ -1,0 +1,40 @@
+
+.form-user{
+
+  fieldset{
+    border-color: #838282!important;
+  }
+  label{
+    color: #3a3a3a!important;
+  }
+  >form .MuiGrid-container{
+    margin:5px 5px 5px 0px;
+  }
+}
+.container-form{
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  background: #fdfdfd70;
+  box-shadow: 1px 4px 5px -3px black;
+  padding: 90px 15px;
+  border-radius: 12px;
+  max-width: 73vw;
+  min-width: 21vw;
+  position: relative;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  text-align: center;
+  font-size: 18px;
+}
+
+.error{
+  font-size: 13px;
+  color: #c00000;
+  margin-left: 10px;
+}
