@@ -1,5 +1,5 @@
-import "../../styles/global.scss";
-import Header from '../../components/Header'
+import "../../../styles/global.scss";
+import Header from '@/components/Header'
 import { AppProvider } from "@/context/AppProvider";
 import { Cart } from "@/components/Cart";
 import Footer from "@/components/Footer";

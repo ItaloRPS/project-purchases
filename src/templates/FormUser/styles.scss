@@ -1,14 +1,22 @@
-
+@import '../../styles/theme.scss';
 .form-user{
+  margin: 20px;
 
-  fieldset{
-    border-color: #838282!important;
-  }
-  label{
-    color: #3a3a3a!important;
-  }
   >form .MuiGrid-container{
     margin:5px 5px 5px 0px;
+  }
+  >form{
+    width: 65%;
+    border-radius: 8px; 
+    padding: 25px;
+
+    >h2{
+      color: #3a3a3a!important;
+    }
+    >hr{
+      border-color: #ffffff1c;
+      margin: 15px 1px 15px 1px;
+    }
   }
 }
 .container-form{
@@ -37,4 +45,20 @@
   font-size: 13px;
   color: #c00000;
   margin-left: 10px;
+}
+
+.btn-finish{
+  background-color: black;
+  &:hover{
+    background-color: $secondary;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .form-user{
+    >form{
+      width: 100%;
+    }
+  }
 }
