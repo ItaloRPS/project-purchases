@@ -1,7 +1,7 @@
 @import '../../../../styles/theme.scss';
 
 $z-index-header: 3;
-$logo-width: 46px;
+$logo-width: 13rem;
 
 .header {
   width: 100%;
@@ -19,3 +19,11 @@ $logo-width: 46px;
 h1,h2,h3{
     color: white;
 }
+
+@media (max-width: 600px) {
+  .logo {
+    width: 44px !important; /* largura fixa no mobile */
+    left: -5px;
+    position: relative;
+    }
+  }
